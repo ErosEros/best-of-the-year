@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Musica</title>
+<div th:replace="~{fragment :: head}"></div>
+</head>
+<body>
+<h1>Musica : </h1>
+<h1 th:text="${title}"></h1>
+ <a th:href="@{/}" class="mt-5 d-flex justify-content-center display-5 text-decoration-none">Ritorna alla Home</a>
+<div th:replace="~{fragment :: script}"></div>
+
+</body>
+</html>

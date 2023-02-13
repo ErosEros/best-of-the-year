@@ -3,10 +3,21 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>BEST FILM OF THE YEAR</title>
+<div th:replace="~{fragment :: head}"></div>
 </head>
 <body>
 	<span>Le migliori songs</span> 
 	<p th:text="${songs}"></p>
+	<h1 class="text-center">LISTA MUSICA</h1>
+
+
+	<ul th:if="${songs.size()>0}" class="list-group text-center">
+	<li th:each="s:${songs}" th:with="title=${s.getTitle()}">
+		<a th:text="${title}" th:href="@{'/songs/' + ${s.getId()}}" class="display-1 text-decoration-none"></a>
+	</li> 
+	</ul>
+ 	<a th:href="@{/}" class="mt-5 d-flex justify-content-center display-5 text-decoration-none">Ritorna alla Home</a>
+ 	<div th:replace="~{fragment :: script}"></div>
 
 
 </body>

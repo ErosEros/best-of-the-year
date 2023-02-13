@@ -3,11 +3,18 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Best Of The Year</title>
+<div th:replace="~{fragment :: head}"></div>
+<link rel="stylesheet" th:href="@{/style.css}">
 </head>
 <body>
-	<span>Best of the year by</span> 
-	<span th:text=" ${name}"></span>
+	
+	<h1 class="text-center text-success">Benvenuto nel mio sito web</h1>
+	<div class="text-center">
 
+	<span>Best of the year by</span> <span th:text="${name}" class="rosso px-5"></span>
+	</div>
+	<div th:replace="~{fragment :: navbar('')}"></div>
+	<div th:replace="~{fragment :: script}"></div>
 
 </body>
 </html>

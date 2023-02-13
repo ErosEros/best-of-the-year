@@ -6,13 +6,14 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.Movie;
 import com.example.demo.Song;
 
 @Controller
-@RequestMapping("/nome")
+@RequestMapping("/")
 public class MainController {
 
 	@GetMapping()
@@ -38,6 +39,21 @@ public class MainController {
 		model.addAttribute("songs", songs);
 		return "songs";
 	}
+	
+	
+	@GetMapping("/movies/{id}") 	
+	public String title(Model model, @PathVariable("id") String id ) {
+		model.addAttribute("title", getBestMovies().get(Integer.parseInt(id)-1));
+		return "titlemovie";
+	}
+
+	@GetMapping("/songs/{id}") 	
+	public String titlesong(Model model, @PathVariable("id") String id ) {
+		model.addAttribute("title", getBestSongs().get(Integer.parseInt(id)-1));
+		return "titlesong";
+	}
+
+
 	
 //	METODO PER PRENDERE I MOVIE
 	private List<Movie> getBestMovies(){

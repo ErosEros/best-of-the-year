@@ -25,7 +25,7 @@ public String getTitle() {
 
 	@Override
 	public String toString() {
-		return "Movie [title=" + title + "]"; 
+		return title; 
 	}
 	
 }
